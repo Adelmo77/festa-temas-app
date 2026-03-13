@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Administrativo | PartyThemes Pro</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar compact">
+    <div class="container topbar-inner">
+      <div>
+        <span class="badge">Painel</span>
+        <h1>PartyThemes Pro Admin</h1>
+        <p class="subtitle">Cadastre, edite, remova e exporte seus temas.</p>
+      </div>
+      <nav class="top-actions">
+        <a class="btn btn-outline" href="index.html">Voltar ao catálogo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container admin-layout">
+    <section class="panel">
+      <h2 id="formTitle">Cadastrar tema</h2>
+      <form id="themeForm" class="form-grid">
+        <input type="hidden" id="themeId" />
+        <label>Nome do tema
+          <input id="name" required placeholder="Ex.: Circo Luxo" />
+        </label>
+        <label>Categoria
+          <input id="category" required placeholder="Ex.: Infantil" />
+        </label>
+        <label>Público
+          <select id="audience" required>
+            <option value="Infantil">Infantil</option>
+            <option value="Adulto">Adulto</option>
+            <option value="15 anos">15 anos</option>
+            <option value="Casamento">Casamento</option>
+            <option value="Corporativo">Corporativo</option>
+          </select>
+        </label>
+        <label>Preço inicial (R$)
+          <input id="price" type="number" min="0" step="0.01" required />
+        </label>
+        <label>Imagem URL
+          <input id="image" placeholder="https://..." />
+        </label>
+        <label>WhatsApp
+          <input id="whatsapp" placeholder="5521999999999" />
+        </label>
+        <label>Tags (separadas por vírgula)
+          <input id="tags" placeholder="luxo, colorido, instagramável" />
+        </label>
+        <label class="full">Descrição curta
+          <textarea id="description" rows="4" placeholder="Descreva o tema, os diferenciais e o pacote."></textarea>
+        </label>
+        <label class="full checkbox-wrap">
+          <input id="featured" type="checkbox" /> Marcar como destaque
+        </label>
+        <div class="full form-actions">
+          <button class="btn" type="submit">Salvar tema</button>
+          <button class="btn btn-outline" type="button" id="resetBtn">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="list-header">
+        <h2>Temas cadastrados</h2>
+        <div class="list-actions">
+          <button id="exportBtn" class="btn btn-outline">Exportar JSON</button>
+          <label class="btn btn-outline upload-btn">
+            Importar JSON
+            <input id="importFile" type="file" accept="application/json" hidden />
+          </label>
+        </div>
+      </div>
+      <div id="adminList" class="admin-list"></div>
+    </section>
+  </main>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

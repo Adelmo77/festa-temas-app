@@ -1,0 +1,90 @@
+<img src="assets/img/logo.png" alt="Logo da empresa" style="height: 70px;">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FestaPro Catálogo de Temas</title>
+  <meta name="description" content="Sistema de catálogo de temas de festas para empresas de decoração. Cadastre, filtre, exporte e apresente temas de forma profissional." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div>
+        <span class="badge">Pronto para GitHub Pages</span>
+        <h1>Encanto Festas - Catálogo de Temas</h1>
+        <p>Veja nossos temas disponíveis e peça seu orçamento.</p>
+      </div>
+      <nav class="top-actions">
+        <a class="btn btn-outline" href="admin.html">Área administrativa</a>
+        <a class="btn" href="#catalogo">Ver catálogo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-card">
+        <h2>Catálogo profissional com filtros, cards visuais e botão direto para WhatsApp</h2>
+        <p>Ideal para decoradoras que precisam mostrar opções de temas, faixas de preço, tags, público e pacotes com visual moderno.</p>
+        <div class="hero-grid">
+          <div class="stat"><strong id="statThemes">0</strong><span>temas cadastrados</span></div>
+          <div class="stat"><strong id="statCategories">0</strong><span>categorias</span></div>
+          <div class="stat"><strong id="statFeatured">0</strong><span>temas em destaque</span></div>
+        </div>
+      </div>
+      <div class="hero-card dark">
+        <h3>O que este sistema já faz</h3>
+        <ul>
+          <li>Cadastro de temas</li>
+          <li>Busca por nome</li>
+          <li>Filtros por categoria</li>
+          <li>Preço inicial e faixa</li>
+          <li>Destaques e tags</li>
+          <li>Exportação e importação em JSON</li>
+          <li>Publicação grátis no GitHub Pages</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container filters" id="catalogo">
+      <input id="searchInput" type="search" placeholder="Buscar tema, tag ou público..." />
+      <select id="categoryFilter">
+        <option value="">Todas as categorias</option>
+      </select>
+      <select id="audienceFilter">
+        <option value="">Todos os públicos</option>
+        <option value="Infantil">Infantil</option>
+        <option value="Adulto">Adulto</option>
+        <option value="15 anos">15 anos</option>
+        <option value="Casamento">Casamento</option>
+        <option value="Corporativo">Corporativo</option>
+      </select>
+      <label class="checkbox-wrap">
+        <input id="featuredFilter" type="checkbox" /> Somente destaques
+      </label>
+    </section>
+
+    <section class="container">
+      <div id="catalogGrid" class="catalog-grid"></div>
+      <p id="emptyState" class="empty hidden">Nenhum tema encontrado com os filtros atuais.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>PartyThemes Pro</strong>
+        <p>Seu MVP pronto para vender catálogos de temas de festa online.</p>
+      </div>
+      <div>
+        <a href="admin.html">Gerenciar catálogo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
